@@ -13,7 +13,7 @@ echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
 
 # Comment this out if you need an AUR package
-PRE_BUILD_CMDS="sed -i '/-Wno-dev/a \              -DCMAKE_CXX_FLAGS=\"-Wno-error=attributes\"' ./PKGBUILD" make-aur-package vbam-git
+PRE_BUILD_CMDS='sed -i "s/-Wno-dev)/-Wno-dev\\n              -DCMAKE_CXX_FLAGS=\\"-Wno-error=attributes\\")/" ./PKGBUILD' make-aur-package vbam-git
 
 # If the application needs to be manually built that has to be done down here
 
