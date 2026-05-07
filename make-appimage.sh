@@ -16,6 +16,8 @@ export DEPLOY_VULKAN=1
 
 # Deploy dependencies
 quick-sharun /usr/bin/visualboyadvance-m
+# this app has problems with other locales breaking physics
+echo 'LC_ALL=C.UTF-8' >> ./AppDir/.env
 
 # Additional changes can be done in between here
 
