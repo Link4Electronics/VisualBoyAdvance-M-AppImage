@@ -6,11 +6,11 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm libdecor
+#pacman -Syu --noconfirm
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
+get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini libdecor-mini
 
 # Comment this out if you need an AUR package
 PRE_BUILD_CMDS='sed -i "s/-Wno-dev)/-Wno-dev\\n              -DCMAKE_CXX_FLAGS=\\"-Wno-error=attributes\\")/" ./PKGBUILD' make-aur-package vbam-git
